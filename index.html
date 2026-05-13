@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>鸟类文件重命名工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="chooseFolderBtn">选择文件夹</button>
+        <span id="folderPath" class="folder-path"></span>
+        <span id="unsupportedHint" class="hint" hidden>
+            当前浏览器不支持 File System Access API，请使用 Chrome 或 Edge。
+        </span>
+    </header>
+
+    <main>
+        <section class="column file-column">
+            <h3>文件列表</h3>
+            <ul id="fileList" class="file-list" tabindex="0"></ul>
+            <button id="confirmRenameBtn" class="confirm-btn" disabled>确定改名</button>
+        </section>
+
+        <section class="column bird-column">
+            <h3>鸟名</h3>
+            <form id="addBirdForm" class="add-bird-form">
+                <input type="text" id="birdInput" placeholder="输入鸟名后回车新增" autocomplete="off">
+            </form>
+            <ul id="birdList" class="bird-list"></ul>
+        </section>
+
+        <section class="preview-area">
+            <div id="previewContainer" class="preview-container">
+                <p class="placeholder">请选择左侧的图片或视频</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="contextMenu" class="context-menu" hidden>
+        <button data-action="edit">修改</button>
+        <button data-action="delete">删除</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

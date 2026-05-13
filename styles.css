@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: #222;
+    background: #f5f5f7;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header button {
+    padding: 6px 14px;
+    font-size: 14px;
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background: #1765c8;
+}
+
+.folder-path {
+    font-size: 13px;
+    color: #666;
+}
+
+.hint {
+    font-size: 13px;
+    color: #c00;
+}
+
+main {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: 280px 240px 1fr;
+    min-height: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    min-height: 0;
+}
+
+.column h3 {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #777;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+}
+
+.file-list,
+.bird-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+.file-list:focus {
+    outline: none;
+}
+
+.file-list li,
+.bird-list li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    font-size: 13px;
+    word-break: break-all;
+    user-select: none;
+}
+
+.bird-list li {
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.bird-list li .initial {
+    flex: 0 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #999;
+    font-size: 12px;
+}
+
+.bird-list li .name {
+    flex: 1 1 auto;
+    padding: 8px 12px 8px 4px;
+}
+
+.file-list li:hover,
+.bird-list li:hover {
+    background: #f5f9ff;
+}
+
+.file-list li.selected,
+.bird-list li.selected {
+    background: #e3f0ff;
+}
+
+.file-list li.modified {
+    color: #e67e22;
+    font-weight: 500;
+}
+
+.file-list li .file-type {
+    color: #999;
+    font-size: 11px;
+    margin-right: 6px;
+    text-transform: uppercase;
+}
+
+.confirm-btn {
+    flex: 0 0 auto;
+    margin: 10px;
+    padding: 8px 14px;
+    background: #34a853;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover:not(:disabled) {
+    background: #2d8e46;
+}
+
+.confirm-btn:disabled {
+    background: #b8d6c1;
+    cursor: not-allowed;
+}
+
+.add-bird-form {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+}
+
+.add-bird-form input {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-bird-form input:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.preview-area {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background: #1e1e1e;
+}
+
+.preview-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.preview-container img,
+.preview-container video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.preview-container .placeholder {
+    color: #888;
+    font-size: 14px;
+}
+
+.context-menu {
+    position: fixed;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 120px;
+    overflow: hidden;
+}
+
+.context-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 14px;
+    border: none;
+    background: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.context-menu button:hover {
+    background: #f0f0f0;
+}
